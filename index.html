@@ -1,1010 +1,453 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APEX ELITE | Master Paint Protection & Supercar Detailing — Los Angeles & Miami</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        obsidian: {
-                            DEFAULT: '#070709',
-                            card: '#111116',
-                            border: '#1f1f2a',
-                            muted: '#94a3b8'
-                        },
-                        gold: {
-                            DEFAULT: '#D4AF37',
-                            light: '#F3E5AB',
-                            dark: '#997A15',
-                            glow: 'rgba(212, 175, 55, 0.25)'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        heading: ['Syne', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        gold: '0 0 35px rgba(212, 175, 55, 0.2)',
-                        glass: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #070709;
-            color: #f8fafc;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumen Interior Studio — Thoughtful Residential Interiors, Brooklyn</title>
+<meta name="description" content="Lumen Interior Studio creates thoughtful, modern residential interiors in Brooklyn and New York. Full-service design, room redesigns, and consultations.">
+<meta property="og:title" content="Lumen Interior Studio — Spaces That Feel Like You">
+<meta property="og:description" content="Thoughtful residential interiors shaped by light, materials, and the way you live.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#F3F0E9; --charcoal:#252522; --sand:#C8BBA8; --olive:#777A64;
+  --line:rgba(37,37,34,.15); --muted:#6f6c63;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--ivory);color:var(--charcoal);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400}
+.label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--olive);font-weight:400}
 
-        .text-3xl{
-            font-size: 1.71rem !important;
-        }
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:60;padding:26px 0;transition:.3s;mix-blend-mode:normal}
+header.scrolled{background:rgba(243,240,233,.92);backdrop-filter:blur(12px);padding:16px 0;border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.02em;font-weight:500}
+.logo em{font-style:italic;color:var(--olive)}
+.menu{display:flex;gap:44px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--charcoal)}
+.menu a{position:relative;padding-bottom:2px}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--charcoal);transition:.35s}
+.menu a:hover::after{width:100%}
+.nav-cta{font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--charcoal);padding-bottom:2px;transition:.3s}
+.nav-cta:hover{color:var(--olive);border-color:var(--olive)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:26px;height:1px;background:var(--charcoal);margin:6px 0;transition:.3s}
 
-        .bg-grid-pattern {
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
+/* hero */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;animation:slowzoom 22s ease-out infinite alternate}
+@keyframes slowzoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(37,37,34,.22) 0%,rgba(37,37,34,.05) 35%,rgba(37,37,34,.5) 100%)}
+.hero-content{position:absolute;left:0;right:0;bottom:80px;z-index:2;color:var(--ivory)}
+.hero-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+.hero-label{color:var(--sand);margin-bottom:24px;opacity:0;animation:fadeUp 1s ease .3s forwards}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,8vw,118px);font-weight:400;line-height:.92;letter-spacing:-.02em;max-width:900px;opacity:0;animation:fadeUp 1s ease .5s forwards}
+.hero h1 em{font-style:italic;color:var(--sand)}
+.hero-sub{max-width:420px;margin-top:28px;font-size:15px;color:rgba(243,240,233,.82);opacity:0;animation:fadeUp 1s ease .8s forwards}
+.hero-cta{margin-top:36px;opacity:0;animation:fadeUp 1s ease 1s forwards}
+.hero-cta a{display:inline-block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ivory);border-bottom:1px solid var(--ivory);padding-bottom:6px;transition:.3s}
+.hero-cta a:hover{color:var(--sand);border-color:var(--sand)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
-        .glass-panel {
-            background: rgba(17, 17, 22, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
+/* studio intro */
+section{padding:130px 0}
+.intro{background:var(--ivory)}
+.intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px;align-items:start}
+.intro-left .label{margin-bottom:32px;display:block}
+.intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,58px);line-height:1.05;font-weight:400;letter-spacing:-.01em}
+.intro h2 em{font-style:italic;color:var(--olive)}
+.intro-right p{font-size:16px;color:var(--charcoal);margin-bottom:24px;max-width:520px}
+.intro-right p:first-of-type::first-letter{font-family:'Cormorant Garamond',serif;font-size:64px;float:left;line-height:.85;padding-right:12px;padding-top:6px;color:var(--olive)}
 
-        .glass-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+/* projects */
+.projects{background:var(--ivory);padding-top:0}
+.projects-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:70px;border-top:1px solid var(--line);padding-top:40px;flex-wrap:wrap;gap:20px}
+.projects-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px 60px}
+.project{cursor:pointer}
+.project:nth-child(even){margin-top:80px}
+.project-img{overflow:hidden;position:relative;background:var(--sand)}
+.project-img img{width:100%;height:440px;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.project:hover .project-img img{transform:scale(1.05)}
+.project-meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.project-meta h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500}
+.project-meta span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive)}
+.project-desc{margin-top:14px;font-size:14px;color:var(--muted);max-width:420px}
+.project-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-top:14px;display:inline-block}
+.demo-tag{font-size:11px;color:var(--olive);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px;display:block}
 
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15);
-            transform: translateY(-2px);
-        }
+/* services */
+.services{background:var(--charcoal);color:var(--ivory)}
+.services .label{color:var(--sand)}
+.services h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,56px);font-weight:400;line-height:1.05;margin-bottom:60px}
+.svc-list{border-top:1px solid rgba(243,240,233,.18)}
+.svc-row{display:grid;grid-template-columns:60px 1fr 2fr;gap:40px;padding:32px 0;border-bottom:1px solid rgba(243,240,233,.18);transition:.35s;cursor:pointer;align-items:baseline}
+.svc-row:hover{padding-left:14px}
+.svc-row .num{font-size:12px;letter-spacing:.16em;color:var(--sand)}
+.svc-row h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400}
+.svc-row p{font-size:14px;color:rgba(243,240,233,.7);max-width:460px}
 
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #ffffff 20%, #F3E5AB 60%, #D4AF37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* philosophy */
+.philosophy{background:var(--sand);padding:160px 0}
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.phil-grid img{width:100%;height:600px;object-fit:cover}
+.phil-copy .label{margin-bottom:32px;display:block}
+.phil-copy h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1;margin-bottom:36px}
+.phil-copy h2 em{font-style:italic;color:var(--olive)}
+.phil-copy p{font-size:16px;margin-bottom:22px;max-width:440px}
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #070709;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f1f2a;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
-        }
+/* process */
+.process{background:var(--ivory)}
+.process h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:400;margin-bottom:60px}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);padding-top:40px}
+.tl-item{padding-right:30px;position:relative}
+.tl-item::before{content:"";position:absolute;top:-46px;left:0;width:8px;height:8px;border-radius:50%;background:var(--olive)}
+.tl-num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--sand);line-height:1;margin-bottom:14px}
+.tl-item h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin-bottom:10px}
+.tl-item p{font-size:13px;color:var(--muted)}
 
-        /* Before/After Slider Handle */
-        .ba-slider input[type="range"] {
-            -webkit-appearance: none;
-            appearance: none;
-            background: transparent;
-        }
-        .ba-slider input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 52px;
-            width: 52px;
-            border-radius: 50%;
-            background: #D4AF37;
-            cursor: ew-resize;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.9);
-            border: 3px solid #ffffff;
-        }
-    </style>
+/* testimonials */
+.testimonial{background:var(--ivory);padding:140px 0;border-top:1px solid var(--line)}
+.tst-head{text-align:center;margin-bottom:70px}
+.tst-head .label{display:block;margin-bottom:20px}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px}
+.tst-item{text-align:left}
+.tst-item blockquote{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;font-weight:400;margin-bottom:26px;color:var(--charcoal)}
+.tst-item cite{font-style:normal;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive)}
+.demo-note{text-align:center;font-size:12px;color:var(--olive);margin-top:60px;font-style:italic}
+
+/* consultation */
+.consult{background:var(--charcoal);color:var(--ivory);padding:140px 0}
+.consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.consult h2{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,64px);font-weight:400;line-height:1;margin-bottom:28px}
+.consult h2 em{font-style:italic;color:var(--sand)}
+.consult p{color:rgba(243,240,233,.7);max-width:380px;margin-bottom:34px}
+.consult .contact-info{font-size:14px;color:rgba(243,240,233,.6)}
+.consult .contact-info a{color:var(--sand);border-bottom:1px solid rgba(200,187,168,.4)}
+form{display:grid;gap:22px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sand)}
+.field input,.field select,.field textarea{background:transparent;border:none;border-bottom:1px solid rgba(243,240,233,.3);color:var(--ivory);padding:10px 0;font-family:'Inter',sans-serif;font-size:15px;font-weight:300;transition:.3s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sand)}
+.field select option{background:var(--charcoal);color:var(--ivory)}
+.field textarea{resize:vertical;min-height:80px}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#d99a86}
+.err{font-size:11px;color:#e8b6a8;display:none}
+.field.invalid .err{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.submit-btn{background:transparent;border:1px solid var(--sand);color:var(--ivory);padding:16px 34px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:.3s;font-family:inherit;justify-self:start;margin-top:10px}
+.submit-btn:hover{background:var(--sand);color:var(--charcoal)}
+.form-note{font-size:11px;color:rgba(243,240,233,.45);margin-top:10px}
+.success{background:rgba(200,187,168,.12);border:1px solid var(--sand);color:var(--ivory);padding:14px;font-size:13px;display:none}
+.success.show{display:block}
+
+/* footer */
+footer{background:var(--ivory);padding:80px 0 40px;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;margin-bottom:14px}
+.foot-logo em{font-style:italic;color:var(--olive)}
+.foot-desc{font-size:13px;color:var(--muted);max-width:280px}
+.foot-grid h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive);margin-bottom:18px;font-weight:400}
+.foot-grid ul{list-style:none;display:grid;gap:10px;font-size:14px}
+.foot-grid a:hover{color:var(--olive)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;font-size:11px;color:var(--olive);letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:12px}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(37,37,34,.96);z-index:200;display:none;align-items:center;justify-content:center;padding:40px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain}
+.lightbox-close{position:absolute;top:24px;right:32px;background:none;border:none;color:var(--ivory);font-size:36px;cursor:pointer;font-weight:300}
+.lightbox-cap{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:var(--sand);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0;background:var(--charcoal);color:var(--ivory);z-index:150;transform:translateX(100%);transition:transform .4s cubic-bezier(.7,0,.3,1);display:flex;flex-direction:column;justify-content:center;padding:60px 40px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:40px;padding:12px 0;font-weight:400}
+.mobile-menu a:hover{color:var(--sand)}
+.mobile-close{position:absolute;top:28px;right:32px;background:none;border:none;color:var(--ivory);font-size:32px;cursor:pointer}
+
+@media(max-width:960px){
+  .wrap{padding:0 24px}
+  section{padding:80px 0}
+  .menu,.nav-cta{display:none}
+  .burger{display:block}
+  .hero-content{bottom:48px}
+  .intro-grid,.phil-grid,.consult-grid{grid-template-columns:1fr;gap:48px}
+  .intro-right p:first-of-type::first-letter{font-size:48px}
+  .project-grid{gap:50px 30px}
+  .project:nth-child(even){margin-top:0}
+  .project-img img{height:340px}
+  .timeline{grid-template-columns:1fr 1fr;gap:40px}
+  .tl-item::before{display:none}
+  .tst-grid{grid-template-columns:1fr;gap:40px}
+  .svc-row{grid-template-columns:40px 1fr;gap:16px}
+  .svc-row p{grid-column:2}
+  .phil-grid img{height:420px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:560px){
+  .project-grid,.row2,.timeline,.foot-grid{grid-template-columns:1fr}
+  .project-img img{height:280px}
+  .hero h1{font-size:44px}
+  .mobile-menu a{font-size:30px}
+}
+</style>
 </head>
-<body class="bg-obsidian text-slate-100 antialiased selection:bg-gold selection:text-black">
+<body>
 
-    <!-- Ambient Glows -->
-    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
-    <div class="fixed bottom-0 right-1/4 w-[700px] h-[700px] bg-yellow-600/5 rounded-full blur-[180px] pointer-events-none z-0"></div>
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Lumen<em>.</em></a>
+    <nav class="menu">
+      <a href="#studio">Studio</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#journal">Journal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Consultation</a>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8" id="mainHeader">
-        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-glass">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-yellow-700 flex items-center justify-center p-0.5 shadow-lg">
-                    <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-gold"></i>
-                    </div>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-heading font-extrabold text-lg tracking-widest text-white">APEX<span class="text-gold">.</span></span>
-                    <span class="text-[8px] text-slate-400 tracking-[0.25em] -mt-1 font-mono uppercase">Elite Protection</span>
-                </div>
-            </a>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close">×</button>
+  <a href="#studio">Studio</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#journal">Journal</a>
+  <a href="#contact">Contact</a>
+</div>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#services" class="hover:text-gold transition-colors">Services</a>
-                <a href="#transformations" class="hover:text-gold transition-colors">Transformations</a>
-                <a href="#calculator" class="hover:text-gold transition-colors">Instant Estimate</a>
-                <a href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a>
-                <a href="#reviews" class="hover:text-gold transition-colors">Client Raves</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-5">
-                <a href="tel:+13105550199" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> +1 (310) 555-0199
-                </a>
-                <button onclick="openBookingModal()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold rounded-xl group bg-gradient-to-r from-gold to-yellow-600 hover:text-black text-black shadow-gold transition-all duration-300 active:scale-95">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-obsidian rounded-[10px] group-hover:bg-opacity-0 text-white group-hover:text-black flex items-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4 text-gold group-hover:text-black"></i>
-                        Book Consultation
-                    </span>
-                </button>
-            </div>
-
-            <!-- Mobile Hamburger -->
-            <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 flex-col gap-4 text-slate-200">
-            <a href="#services" class="mobile-link py-2 border-b border-slate-800/80 flex justify-between items-center">
-                <span>Services</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-            </a>
-            <a href="#transformations" class="mobile-link py-2 border-b border-slate-800/80 flex justify-between items-center">
-                <span>Transformations</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-            </a>
-            <a href="#calculator" class="mobile-link py-2 border-b border-slate-800/80 flex justify-between items-center">
-                <span>Instant Estimate</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-            </a>
-            <a href="#portfolio" class="mobile-link py-2 border-b border-slate-800/80 flex justify-between items-center">
-                <span>Portfolio</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-            </a>
-            <a href="#reviews" class="mobile-link py-2 flex justify-between items-center">
-                <span>Client Raves</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-            </a>
-            <div class="pt-4 flex flex-col gap-3">
-                <a href="tel:+13105550199" class="text-center font-mono text-xs py-2 text-gold bg-obsidian rounded-xl border border-slate-800">
-                    +1 (310) 555-0199
-                </a>
-                <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl bg-gradient-to-r from-gold to-yellow-600 font-bold text-black text-center shadow-gold">
-                    Book Consultation
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-4 bg-grid-pattern overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-amber-500/10 blur-[160px] rounded-full pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <!-- Left Hero Content -->
-            <div class="lg:col-span-7 flex flex-col gap-6 text-left">
-                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border border-gold/30 text-xs font-mono text-gold w-fit shadow-lg">
-                    <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
-                    LOS ANGELES & MIAMI FLAGSHIP STUDIOS
-                </div>
-
-                <h1 class="font-heading text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.08]">
-                    Precision Beyond <br>
-                    <span class="gold-gradient-text">Detailing.</span>
-                </h1>
-
-                <p class="text-slate-400 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
-                    Exotic car preservation at its absolute peak. Master-certified XPEL PPF installers, multi-stage corrective paint polishing, and surgical interior restoration for hypercars, luxury SUVs, and timeless classics.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                    <button onclick="openBookingModal('General Consultation')" class="px-8 py-4 rounded-xl bg-gold text-black font-extrabold text-sm tracking-wider uppercase hover:bg-gold-light transition-all shadow-gold flex items-center justify-center gap-3 group">
-                        <span>Secure Your Slot</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-                    </button>
-                    
-                    <a href="#transformations" class="px-8 py-4 rounded-xl glass-panel hover:bg-slate-800/60 font-semibold text-sm text-center text-slate-200 border border-slate-700/60 transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-gold"></i>
-                        Explore Before & After
-                    </a>
-                </div>
-
-                <!-- Trust Badges Bar -->
-                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800/80 mt-4">
-                    <div>
-                        <div class="font-heading text-2xl sm:text-3xl font-extrabold text-white">12+</div>
-                        <div class="text-[11px] text-slate-400 font-mono uppercase mt-1">Years Mastery</div>
-                    </div>
-                    <div>
-                        <div class="font-heading text-2xl sm:text-3xl font-extrabold text-white">2,100+</div>
-                        <div class="text-[11px] text-slate-400 font-mono uppercase mt-1">Exotics Protected</div>
-                    </div>
-                    <div>
-                        <div class="font-heading text-2xl sm:text-3xl font-extrabold text-gold flex items-center gap-1">
-                            <span>5.0</span>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold text-gold"></i>
-                        </div>
-                        <div class="text-[11px] text-slate-400 font-mono uppercase mt-1">Verified VIP Rating</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Hero Visual -->
-            <div class="lg:col-span-5 relative">
-                <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden glass-card p-2 group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80" 
-                         alt="Supercar Ceramic Coating & PPF" 
-                         class="w-full h-full object-cover rounded-2xl filter brightness-95 contrast-105 group-hover:scale-105 transition-transform duration-700">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-80"></div>
-
-                    <!-- Floating Certified Badge -->
-                    <div class="absolute top-6 right-6 glass-panel px-4 py-2.5 rounded-xl flex items-center gap-3 border border-gold/40 shadow-gold">
-                        <i data-lucide="award" class="w-5 h-5 text-gold"></i>
-                        <div>
-                            <div class="text-[9px] text-slate-400 font-mono uppercase">Accredited</div>
-                            <div class="text-xs font-bold text-white">XPEL & Ceramic Pro Elite</div>
-                        </div>
-                    </div>
-
-                    <!-- Bottom Floating Card -->
-                    <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl flex items-center justify-between border border-slate-700">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-gold border border-gold/20">
-                                <i data-lucide="shield" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-white">Climate-Controlled Cleanroom</div>
-                                <div class="text-xs text-slate-400">Dust-free surgical environment</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BEFORE / AFTER INTERACTIVE COMPARISON SECTION -->
-    <section id="transformations" class="py-24 px-4 bg-obsidian-card/50 relative border-y border-slate-800/80">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="text-xs font-mono text-gold uppercase tracking-widest mb-2">Visual Proof</div>
-                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white">
-                    Experience the <span class="gold-gradient-text">APEX Difference</span>
-                </h2>
-                <p class="text-slate-400 text-sm mt-4">
-                    Slide left and right to witness the transition from heavy micro-marring and swirl marks to an immaculate, mirror-depth ceramic finish.
-                </p>
-            </div>
-
-            <!-- Before/After Slider Component -->
-            <div class="max-w-4xl mx-auto relative rounded-3xl overflow-hidden glass-panel p-2 shadow-2xl border border-slate-800">
-                <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] select-none overflow-hidden rounded-2xl ba-slider" id="baSliderContainer">
-                    
-                    <!-- AFTER Image (Background Base) -->
-                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1600&q=80" 
-                         alt="After Supercar Detailing" 
-                         class="absolute inset-0 w-full h-full object-cover filter contrast-110 saturate-105">
-                    <div class="absolute top-4 right-4 bg-black/80 backdrop-blur border border-gold/40 text-gold px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider z-10 shadow-gold">
-                        AFTER (Multi-Stage Polish & Ceramic)
-                    </div>
-
-                    <!-- BEFORE Image (Clipped Overlay) -->
-                    <div class="absolute inset-0 w-1/2 overflow-hidden" id="baBeforeWrapper">
-                        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1600&q=80" 
-                             alt="Before Detailing" 
-                             class="absolute top-0 left-0 max-w-none h-full object-cover filter brightness-75 contrast-90 grayscale-[40%]"
-                             id="baBeforeImg">
-                        <div class="absolute top-4 left-4 bg-black/80 backdrop-blur border border-slate-700 text-slate-300 px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider z-10">
-                            BEFORE (Swirled & Oxidized)
-                        </div>
-                    </div>
-
-                    <!-- Divider Line -->
-                    <div class="absolute top-0 bottom-0 w-1 bg-gold shadow-gold z-20 pointer-events-none" id="baDivider" style="left: 50%;"></div>
-
-                    <!-- Range Input Overlay -->
-                    <input type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 z-30 cursor-ew-resize" id="baRangeInput">
-                </div>
-            </div>
-
-            <!-- Stats Bar Below Slider -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
-                <div class="glass-panel p-4 rounded-xl text-center border border-slate-800">
-                    <div class="text-slate-400 text-xs font-mono">Clarity Gain</div>
-                    <div class="text-white font-bold text-lg mt-1">+99.4% Gloss Index</div>
-                </div>
-                <div class="glass-panel p-4 rounded-xl text-center border border-slate-800">
-                    <div class="text-slate-400 text-xs font-mono">Hydrophobicity</div>
-                    <div class="text-white font-bold text-lg mt-1">118° Contact Angle</div>
-                </div>
-                <div class="glass-panel p-4 rounded-xl text-center border border-slate-800">
-                    <div class="text-slate-400 text-xs font-mono">Scratch Resistance</div>
-                    <div class="text-white font-bold text-lg mt-1">10H Hardness Rating</div>
-                </div>
-                <div class="glass-panel p-4 rounded-xl text-center border border-slate-800">
-                    <div class="text-slate-400 text-xs font-mono">Written Warranty</div>
-                    <div class="text-gold font-bold text-lg mt-1">Up to Lifetime</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CURATED SERVICES SECTION -->
-    <section id="services" class="py-24 px-4 relative bg-obsidian">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <div class="text-xs font-mono text-gold uppercase tracking-widest mb-2 flex items-center gap-2">
-                        <span class="w-6 h-[1px] bg-gold"></span> Elite Offerings
-                    </div>
-                    <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white">
-                        Curated <span class="gold-gradient-text">Master Packages</span>
-                    </h2>
-                </div>
-                <p class="text-slate-400 text-sm max-w-md">
-                    Every service is executed with surgical precision using industry-leading materials from XPEL, Gyeon, and Ceramic Pro.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all"></div>
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-obsidian-card border border-slate-700 flex items-center justify-center text-gold mb-6 group-hover:border-gold group-hover:scale-110 transition-all">
-                            <i data-lucide="shield" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
-                            Full Body PPF (XPEL Ultimate+)
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Complete seamless encapsulation in self-healing paint protection film. Guards against rock chips, road salt, and UV degradation.
-                        </p>
-                        <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Custom computer-cut templates</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Wrapped edges & tucked panels</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> 10-Year manufacturer warranty</li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                        <span class="text-xs font-mono text-slate-400">Starting at <strong class="text-white text-base font-bold">$6,500</strong></span>
-                        <button onclick="openBookingModal('Full Body PPF')" class="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                            Inquire <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/15 transition-all"></div>
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-obsidian-card border border-slate-700 flex items-center justify-center text-gold mb-6 group-hover:border-gold group-hover:scale-110 transition-all">
-                            <i data-lucide="sparkles" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
-                            Multi-Stage Paint Correction
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Rigorous multi-stage rotary and dual-action polishing to eliminate 95%+ of swirls, scratches, and oxidation while preserving clear coat.
-                        </p>
-                        <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Paint depth meter inspection</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Hologram & swirl eradication</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Includes silica primer prep layer</li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                        <span class="text-xs font-mono text-slate-400">Starting at <strong class="text-white text-base font-bold">$1,850</strong></span>
-                        <button onclick="openBookingModal('Paint Correction')" class="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                            Inquire <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all"></div>
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-obsidian-card border border-slate-700 flex items-center justify-center text-gold mb-6 group-hover:border-gold group-hover:scale-110 transition-all">
-                            <i data-lucide="disc" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
-                            Ceramic Pro 9H Coating Suite
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Permanent nanoscale molecular bond offering extreme chemical resistance, effortless self-cleaning wash maintenance, and blinding gloss.
-                        </p>
-                        <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Multi-layer body & wheel coating</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Extreme hydrophobic lotus effect</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Carfax reported warranty</li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                        <span class="text-xs font-mono text-slate-400">Starting at <strong class="text-white text-base font-bold">$2,200</strong></span>
-                        <button onclick="openBookingModal('Ceramic Pro 9H')" class="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                            Inquire <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group relative overflow-hidden">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-obsidian-card border border-slate-700 flex items-center justify-center text-gold mb-6 group-hover:border-gold group-hover:scale-110 transition-all">
-                            <i data-lucide="armchair" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
-                            Bespoke Interior Restoration
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Meticulous deep steam cleaning, leather nourishment, Alcantara conditioning, and ceramic barrier protection for all cabin surfaces.
-                        </p>
-                        <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> pH-balanced leather conditioning</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Dye-transfer stain removal</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Medical-grade ozone sterilization</li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                        <span class="text-xs font-mono text-slate-400">Starting at <strong class="text-white text-base font-bold">$950</strong></span>
-                        <button onclick="openBookingModal('Interior Restoration')" class="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                            Inquire <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group relative overflow-hidden">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-obsidian-card border border-slate-700 flex items-center justify-center text-gold mb-6 group-hover:border-gold group-hover:scale-110 transition-all">
-                            <i data-lucide="sun" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
-                            IR Ceramic Window Tinting
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Advanced nano-ceramic tint films blocking up to 98% of infrared heat and 99.9% of harmful UV rays without interfering with electronics.
-                        </p>
-                        <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Superior solar heat rejection</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Zero signal interference (5G/GPS)</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Lifetime no-bubble guarantee</li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                        <span class="text-xs font-mono text-slate-400">Starting at <strong class="text-white text-base font-bold">$650</strong></span>
-                        <button onclick="openBookingModal('Window Tinting')" class="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                            Inquire <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group relative overflow-hidden border-dashed border-slate-700">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-obsidian-card border border-slate-700 flex items-center justify-center text-gold mb-6">
-                            <i data-lucide="sliders" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-3">
-                            VIP Concierge Maintenance
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Exclusive maintenance protocol for APEX protected vehicles. Scheduled maintenance washes, booster layer top-ups, and wheel care.
-                        </p>
-                        <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Priority studio scheduling</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Enclosed trailer transport available</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Dedicated client manager</li>
-                        </ul>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                        <span class="text-xs font-mono text-slate-400">Custom subscription</span>
-                        <button onclick="openBookingModal('VIP Concierge')" class="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                            Consult <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE ESTIMATE CALCULATOR -->
-    <section id="calculator" class="py-24 px-4 bg-obsidian-card/40 relative border-t border-slate-800/80">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <div class="text-xs font-mono text-gold uppercase tracking-widest mb-2">Instant Pricing Engine</div>
-                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
-                    Build & Estimate Your Package
-                </h2>
-                <p class="text-slate-400 text-sm mt-2">Select your vehicle classification and desired protective upgrades for real-time quotation.</p>
-            </div>
-
-            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl">
-                <!-- Step 1: Vehicle Size Selection -->
-                <div class="mb-10">
-                    <label class="block text-xs font-mono uppercase text-slate-400 mb-4">1. Select Vehicle Classification:</label>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="vehicleTypeSelector">
-                        <button type="button" data-multiplier="1" class="veh-type-btn active flex flex-col items-center gap-2 p-4 rounded-xl glass-card border border-gold text-gold">
-                            <i data-lucide="car" class="w-7 h-7"></i>
-                            <span class="text-xs font-bold">Coupe / Sedan</span>
-                        </button>
-                        <button type="button" data-multiplier="1.15" class="veh-type-btn flex flex-col items-center gap-2 p-4 rounded-xl glass-card border border-slate-800 text-slate-400 hover:text-white">
-                            <i data-lucide="truck" class="w-7 h-7"></i>
-                            <span class="text-xs font-bold">Grand Tourer</span>
-                        </button>
-                        <button type="button" data-multiplier="1.3" class="veh-type-btn flex flex-col items-center gap-2 p-4 rounded-xl glass-card border border-slate-800 text-slate-400 hover:text-white">
-                            <i data-lucide="shield" class="w-7 h-7"></i>
-                            <span class="text-xs font-bold">Luxury SUV / Truck</span>
-                        </button>
-                        <button type="button" data-multiplier="1.25" class="veh-type-btn flex flex-col items-center gap-2 p-4 rounded-xl glass-card border border-slate-800 text-slate-400 hover:text-white">
-                            <i data-lucide="zap" class="w-7 h-7"></i>
-                            <span class="text-xs font-bold">Exotic Supercar</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Checkboxes Services -->
-                <div class="mb-10">
-                    <label class="block text-xs font-mono uppercase text-slate-400 mb-4">2. Select Protection & Enhancement Options:</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <label class="flex items-center justify-between p-4 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="1850" class="calc-checkbox w-5 h-5 rounded accent-gold">
-                                <span class="text-sm text-slate-200">Stage 2 Paint Correction</span>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">$1,850</span>
-                        </label>
-                        <label class="flex items-center justify-between p-4 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="2200" class="calc-checkbox w-5 h-5 rounded accent-gold" checked>
-                                <span class="text-sm text-slate-200">Ceramic Pro 9H Coating Suite</span>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">$2,200</span>
-                        </label>
-                        <label class="flex items-center justify-between p-4 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="6500" class="calc-checkbox w-5 h-5 rounded accent-gold">
-                                <span class="text-sm text-slate-200">Full Body XPEL PPF Wrap</span>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">$6,500</span>
-                        </label>
-                        <label class="flex items-center justify-between p-4 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" value="950" class="calc-checkbox w-5 h-5 rounded accent-gold">
-                                <span class="text-sm text-slate-200">Bespoke Interior Reconditioning</span>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">$950</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Calculator Result Footer -->
-                <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <div>
-                        <div class="text-xs font-mono text-slate-400 uppercase">Estimated Investment:</div>
-                        <div class="text-3xl sm:text-4xl font-heading font-extrabold text-gold" id="calcTotalDisplay">
-                            $2,200
-                        </div>
-                    </div>
-
-                    <button onclick="applyCalculatedBooking()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-yellow-600 text-black font-extrabold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity shadow-gold">
-                        Lock Estimate & Request Consultation
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO / GALLERY SHOWCASE -->
-    <section id="portfolio" class="py-24 px-4 bg-obsidian">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <div class="text-xs font-mono text-gold uppercase tracking-widest mb-2">Exotic Showcase</div>
-                    <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white">
-                        Recent <span class="gold-gradient-text">Masterpieces</span>
-                    </h2>
-                </div>
-                <p class="text-slate-400 text-sm max-w-md">
-                    A glimpse into our Los Angeles and Miami climate-controlled bays featuring elite hypercars and bespoke luxury builds.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Card 1 -->
-                <div class="group relative rounded-2xl overflow-hidden glass-card border border-slate-800 aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80" 
-                         alt="Porsche 911 GT3 RS PPF" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent opacity-90"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-[10px] font-mono text-gold uppercase px-2.5 py-1 rounded-md bg-gold/10 border border-gold/20">Full Body Matte PPF</span>
-                        <h4 class="font-heading text-lg font-bold text-white mt-2">Porsche 911 GT3 RS</h4>
-                        <p class="text-xs text-slate-400 mt-1">Satin stealth wrap with ceramic wheel-caliper armor.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Card 2 -->
-                <div class="group relative rounded-2xl overflow-hidden glass-card border border-slate-800 aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=80" 
-                         alt="BMW M5 Competition Ceramic" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent opacity-90"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-[10px] font-mono text-gold uppercase px-2.5 py-1 rounded-md bg-gold/10 border border-gold/20">Stage 3 Correction & 9H</span>
-                        <h4 class="font-heading text-lg font-bold text-white mt-2">BMW M5 Competition</h4>
-                        <p class="text-xs text-slate-400 mt-1">Mirror gloss black glass finish with IR window tint.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Card 3 -->
-                <div class="group relative rounded-2xl overflow-hidden glass-card border border-slate-800 aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80" 
-                         alt="Ferrari F8 Tributo" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent opacity-90"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-[10px] font-mono text-gold uppercase px-2.5 py-1 rounded-md bg-gold/10 border border-gold/20">XPEL Ultimate+ & Interior</span>
-                        <h4 class="font-heading text-lg font-bold text-white mt-2">Ferrari F8 Tributo</h4>
-                        <p class="text-xs text-slate-400 mt-1">Front clip armor and full leather antimicrobial conditioning.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS & CLIENT TRUST -->
-    <section id="reviews" class="py-24 px-4 bg-obsidian-card/40 relative border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="text-xs font-mono text-gold uppercase tracking-widest mb-2">Verified Elite Raves</div>
-                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
-                    Trusted by Collectors & <span class="gold-gradient-text">Enthusiasts</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-gold mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                        </div>
-                        <p class="text-xs text-slate-300 leading-relaxed italic mb-6">
-                            "APEX is in a league of their own. Brought my GT3 RS straight from delivery to their LA studio for full stealth PPF. The edge tucking is so precise you cannot tell a film is even on the car."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-white text-sm">BH</div>
-                        <div>
-                            <div class="text-sm font-bold text-white">Brandon H.</div>
-                            <div class="text-[11px] text-slate-400">Beverly Hills, CA</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-gold mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                        </div>
-                        <p class="text-xs text-slate-300 leading-relaxed italic mb-6">
-                            "The Miami team handled my Rolls-Royce Ghost with absolute professionalism. Their ceramic coating package makes maintaining a black car in South Florida heat effortless."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-white text-sm">CM</div>
-                        <div>
-                            <div class="text-sm font-bold text-white">Carlos M.</div>
-                            <div class="text-[11px] text-slate-400">Brickell, Miami, FL</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-gold mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
-                        </div>
-                        <p class="text-xs text-slate-300 leading-relaxed italic mb-6">
-                            "Incredible attention to detail. They spotted micro-imperfections in the factory paint I never would have noticed and corrected them flawlessly before applying ceramic armor."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-white text-sm">JD</div>
-                        <div>
-                            <div class="text-sm font-bold text-white">Jonathan D.</div>
-                            <div class="text-[11px] text-slate-400">Bel Air, CA</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTS & FLAGSHIP LOCATIONS -->
-    <section id="contact" class="py-24 px-4 bg-obsidian relative">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <!-- Left Info -->
-            <div class="lg:col-span-5 flex flex-col justify-between">
-                <div>
-                    <div class="text-xs font-mono text-gold uppercase tracking-widest mb-2">Flagship Studios</div>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mb-6">
-                        Connect with Our <span class="gold-gradient-text">Master Technicians</span>
-                    </h2>
-
-                    <div class="space-y-6 text-sm">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-obsidian-card border border-slate-800 flex items-center justify-center text-gold shrink-0">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <div class="text-slate-400 text-xs font-mono">Los Angeles Flagship:</div>
-                                <div class="text-white font-bold text-base mt-0.5">8850 S Sepulveda Blvd, Los Angeles, CA 90045</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-obsidian-card border border-slate-800 flex items-center justify-center text-gold shrink-0">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <div class="text-slate-400 text-xs font-mono">Miami Flagship:</div>
-                                <div class="text-white font-bold text-base mt-0.5">3400 NW 7th Ave, Miami, FL 33127</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-obsidian-card border border-slate-800 flex items-center justify-center text-gold shrink-0">
-                                <i data-lucide="phone-call" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <div class="text-slate-400 text-xs font-mono">Direct Consultation Line:</div>
-                                <a href="tel:+13105550199" class="text-gold font-bold text-lg hover:underline block mt-0.5">+1 (310) 555-0199</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-8 border-t border-slate-800 mt-8 flex items-center gap-4">
-                    <a href="#" class="w-10 h-10 rounded-xl glass-card border border-slate-800 flex items-center justify-center text-slate-300 hover:text-gold hover:border-gold transition-all">
-                        <i data-lucide="instagram" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-xl glass-card border border-slate-800 flex items-center justify-center text-slate-300 hover:text-gold hover:border-gold transition-all">
-                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-xl glass-card border border-slate-800 flex items-center justify-center text-slate-300 hover:text-gold hover:border-gold transition-all">
-                        <i data-lucide="youtube" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Interactive Styled Map Mockup -->
-            <div class="lg:col-span-7 h-[420px] rounded-3xl overflow-hidden glass-panel border border-slate-800 relative group flex items-center justify-center">
-                <div class="absolute inset-0 bg-obsidian/95 flex flex-col items-center justify-center p-6 text-center">
-                    <div class="w-16 h-16 rounded-full bg-gold/15 border border-gold flex items-center justify-center text-gold mb-4 shadow-gold">
-                        <i data-lucide="navigation" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-2">APEX Elite Detailing Studios</h3>
-                    <p class="text-xs text-slate-400 max-w-sm mb-6">Private secure enclosures with 24/7 armed monitoring and climate-regulated coating booths.</p>
-                    <a href="https://maps.google.com" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 border border-slate-700 transition-all">
-                        <span>Get Directions in Maps</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-8 px-4 border-t border-slate-900 bg-black/80 text-slate-500 text-xs text-center">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
-            <div>© 2026 APEX Elite Detailing Studios. All rights reserved.</div>
-            <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-slate-300">Privacy Policy</a>
-                <a href="#" class="hover:text-slate-300">Terms of Service</a>
-                <a href="#" class="hover:text-slate-300">Warranty Registry</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ONLINE BOOKING MODAL -->
-    <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-slate-800 relative shadow-2xl animate-in fade-in zoom-in duration-200">
-            <!-- Close Button -->
-            <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-1">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-
-            <div class="mb-6">
-                <div class="text-xs font-mono text-gold uppercase tracking-wider mb-1">VIP Appointment</div>
-                <h3 class="font-heading text-2xl font-bold text-white">Secure Your Consultation</h3>
-                <p class="text-xs text-slate-400 mt-1">Provide your contact details and our lead technician will reach out within 2 hours.</p>
-            </div>
-
-            <form id="modalBookingForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-mono text-slate-300 mb-1">Full Name</label>
-                    <input type="text" required placeholder="Alexander Wright" class="w-full bg-obsidian border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-mono text-slate-300 mb-1">Phone Number</label>
-                    <input type="tel" required placeholder="+1 (310) 000-0000" class="w-full bg-obsidian border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-mono text-slate-300 mb-1">Vehicle Year, Make & Model</label>
-                    <input type="text" id="modalCarInput" placeholder="2026 Porsche 911 GT3 RS" class="w-full bg-obsidian border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-mono text-slate-300 mb-1">Requested Package / Service</label>
-                    <input type="text" id="modalServiceInput" placeholder="Full Body PPF or Ceramic Coating" class="w-full bg-obsidian border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
-                </div>
-
-                <button type="submit" class="w-full py-4 rounded-xl bg-gold text-black font-extrabold text-sm uppercase tracking-wider hover:bg-gold-light transition-colors shadow-gold mt-4">
-                    Confirm Consultation Request
-                </button>
-            </form>
-        </div>
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1800&q=85" alt="Bright modern living room interior with natural light and warm materials" loading="eager">
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="label hero-label">Brooklyn · Residential Interiors</div>
+      <h1>Spaces That<br>Feel Like <em>You.</em></h1>
+      <p class="hero-sub">Thoughtful residential interiors shaped by light, materials, and the way you live.</p>
+      <div class="hero-cta"><a href="#projects">Explore Our Work →</a></div>
     </div>
+  </div>
+</section>
 
-    <!-- SUCCESS NOTIFICATION TOAST -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden glass-panel border border-gold/50 p-4 rounded-2xl shadow-gold flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold">
-            <i data-lucide="check" class="w-5 h-5"></i>
-        </div>
-        <div>
-            <div class="text-sm font-bold text-white">Consultation Request Confirmed!</div>
-            <div class="text-xs text-slate-400">Our concierge will contact you shortly.</div>
-        </div>
+<!-- STUDIO -->
+<section class="intro" id="studio">
+  <div class="wrap intro-grid">
+    <div class="intro-left">
+      <span class="label">The Studio</span>
+      <h2>Design With<br><em>Intention.</em></h2>
     </div>
+    <div class="intro-right">
+      <p>Lumen Interior Studio is a Brooklyn-based design practice focused on residential work. We approach each project as a collaboration — listening first, then translating the way you actually live into a considered spatial and material language.</p>
+      <p>Our work is quiet. We favour honest materials, natural light, and proportions that feel right to the body. The goal is never decoration for its own sake, but interiors that feel inevitable — as though they could not have been arranged any other way.</p>
+      <p>Whether it is a single room or an entire home, we treat the process with the same care: measured, personal, and unhurried.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="projects-head">
+      <div>
+        <span class="label">Selected Work</span>
+        <h2 style="margin-top:14px">Projects</h2>
+      </div>
+      <span class="demo-tag">Concept / demo portfolio projects</span>
+    </div>
+    <div class="project-grid">
+      <article class="project" data-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" data-cap="The Brooklyn Residence">
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80" alt="The Brooklyn Residence — minimal living space with warm oak and natural light" loading="lazy"></div>
+        <div class="project-meta"><h3>The Brooklyn Residence</h3><span>Brooklyn</span></div>
+        <p class="project-desc">A full interior renovation for a young family — open, quiet, and grounded in warm oak and pale plaster.</p>
+        <span class="project-tag">Full-Service Design</span>
+      </article>
+      <article class="project" data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85" data-cap="Quiet Oak Apartment">
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Quiet Oak Apartment — refined neutral interior with textured surfaces" loading="lazy"></div>
+        <div class="project-meta"><h3>Quiet Oak Apartment</h3><span>Brooklyn</span></div>
+        <p class="project-desc">A rental turned long-term home, reworked through layered textiles, considered lighting, and soft edges.</p>
+        <span class="project-tag">Room Redesign</span>
+      </article>
+      <article class="project" data-img="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85" data-cap="The Park Slope Townhouse">
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80" alt="The Park Slope Townhouse — historic brownstone interior with modern detailing" loading="lazy"></div>
+        <div class="project-meta"><h3>The Park Slope Townhouse</h3><span>Park Slope</span></div>
+        <p class="project-desc">A careful dialogue between historic architectural detail and modern, understated furnishing.</p>
+        <span class="project-tag">Space Planning</span>
+      </article>
+      <article class="project" data-img="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=85" data-cap="Natural Light Residence">
+        <div class="project-img"><img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80" alt="Natural Light Residence — airy minimalist interior with pale walls and linen textures" loading="lazy"></div>
+        <div class="project-meta"><h3>Natural Light Residence</h3><span>Manhattan</span></div>
+        <p class="project-desc">A south-facing apartment shaped around daylight — pale walls, linen, and quiet material contrast.</p>
+        <span class="project-tag">Material & Finish Selection</span>
+      </article>
+    </div>
+  </div>
+</section>
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <span class="label">Services</span>
+    <h2 style="margin-top:16px">What We Offer</h2>
+    <div class="svc-list">
+      <div class="svc-row"><span class="num">01</span><h3>Full-Service Interior Design</h3><p>End-to-end design for entire homes, from concept through installation.</p></div>
+      <div class="svc-row"><span class="num">02</span><h3>Room Redesign</h3><p>A focused rethink of a single room — layout, palette, and key pieces.</p></div>
+      <div class="svc-row"><span class="num">03</span><h3>Space Planning</h3><p>Understanding how a space should function before deciding how it looks.</p></div>
+      <div class="svc-row"><span class="num">04</span><h3>Material & Finish Selection</h3><p>Curated palettes of paint, stone, timber, and textile — tested in situ.</p></div>
+      <div class="svc-row"><span class="num">05</span><h3>Design Consultation</h3><p>A focused conversation about direction, constraints, and next steps.</p></div>
+    </div>
+  </div>
+</section>
 
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="wrap phil-grid">
+    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Detail of natural materials — stone, linen, and warm timber" loading="lazy">
+    <div class="phil-copy">
+      <span class="label">Philosophy</span>
+      <h2>Less Noise.<br>More <em>Meaning.</em></h2>
+      <p>We believe good interiors are not about how much is added, but about what is left out. Proportion, light, and material carry more than decoration ever could.</p>
+      <p>Natural materials age honestly. Light changes across the day. Function should never be sacrificed for looks. These are the principles that guide our work.</p>
+    </div>
+  </div>
+</section>
 
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        }
+<!-- PROCESS -->
+<section class="process" id="journal">
+  <div class="wrap">
+    <span class="label">Process</span>
+    <h2 style="margin-top:14px">How We Work</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-num">01</div><h3>Discovery</h3><p>We listen — to how you live, what you need, and what you love.</p></div>
+      <div class="tl-item"><div class="tl-num">02</div><h3>Concept Development</h3><p>A first direction: spatial ideas, material language, and mood.</p></div>
+      <div class="tl-item"><div class="tl-num">03</div><h3>Design Refinement</h3><p>Detailing, specification, and coordination with your trades.</p></div>
+      <div class="tl-item"><div class="tl-num">04</div><h3>Final Styling</h3><p>Installation, styling, and the last considered details.</p></div>
+    </div>
+  </div>
+</section>
 
-        // Before / After Slider Logic
-        const baRangeInput = document.getElementById('baRangeInput');
-        const baBeforeWrapper = document.getElementById('baBeforeWrapper');
-        const baBeforeImg = document.getElementById('baBeforeImg');
-        const baDivider = document.getElementById('baDivider');
-        const baSliderContainer = document.getElementById('baSliderContainer');
+<!-- TESTIMONIALS -->
+<section class="testimonial">
+  <div class="wrap">
+    <div class="tst-head"><span class="label">Words</span></div>
+    <div class="tst-grid">
+      <div class="tst-item"><blockquote>"Olivia understood exactly how we wanted our home to feel. The result is beautiful without sacrificing everyday comfort."</blockquote><cite>Sophia L.</cite></div>
+      <div class="tst-item"><blockquote>"The process felt organized and personal. Every design decision had a clear purpose."</blockquote><cite>Andrew M.</cite></div>
+      <div class="tst-item"><blockquote>"We loved the attention to materials, lighting, and small details. The space feels completely different."</blockquote><cite>Rachel K.</cite></div>
+    </div>
+    <p class="demo-note">Sample demonstration testimonials — not verified customer reviews.</p>
+  </div>
+</section>
 
-        function updateSlider() {
-            const val = baRangeInput.value;
-            baBeforeWrapper.style.width = `${val}%`;
-            baDivider.style.left = `${val}%`;
-            
-            if (baSliderContainer) {
-                baBeforeImg.style.width = `${baSliderContainer.offsetWidth}px`;
-            }
-        }
+<!-- CONSULT -->
+<section class="consult" id="contact">
+  <div class="wrap consult-grid">
+    <div>
+      <span class="label">Consultation</span>
+      <h2 style="margin-top:16px">Let's Create<br>Something <em>Thoughtful.</em></h2>
+      <p>Tell us a little about your project. We'll respond within a few business days to arrange an initial conversation.</p>
+      <div class="contact-info">
+        <p style="margin-bottom:8px">Olivia Bennett</p>
+        <p><a href="mailto:olivia@lumeninteriors.example">olivia@lumeninteriors.example</a></p>
+        <p><a href="tel:+17185550102">+1 (718) 555-0102</a></p>
+      </div>
+    </div>
+    <form id="lumenForm" novalidate>
+      <div class="row2">
+        <div class="field"><label for="l-name">Name</label><input id="l-name" type="text" required><span class="err">Please enter your name.</span></div>
+        <div class="field"><label for="l-email">Email</label><input id="l-email" type="email" required><span class="err">Please enter a valid email.</span></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="l-type">Project Type</label><select id="l-type" required><option value="">Select…</option><option>Full-Service Design</option><option>Room Redesign</option><option>Space Planning</option><option>Material Selection</option><option>Design Consultation</option></select><span class="err">Please select a project type.</span></div>
+        <div class="field"><label for="l-property">Property Type</label><select id="l-property" required><option value="">Select…</option><option>Apartment</option><option>Townhouse</option><option>House</option><option>Other</option></select><span class="err">Please select a property type.</span></div>
+      </div>
+      <div class="field"><label for="l-msg">Message</label><textarea id="l-msg" required></textarea><span class="err">Please tell us a little about the project.</span></div>
+      <button type="submit" class="submit-btn">Request a Consultation</button>
+      <p class="form-note">Demo form — in a live site your details would be sent to the studio.</p>
+      <div class="success" id="lumenSuccess">Thank you — your request has been recorded in this demo. A real studio would respond by email.</div>
+    </form>
+  </div>
+</section>
 
-        if (baRangeInput) {
-            baRangeInput.addEventListener('input', updateSlider);
-            window.addEventListener('resize', updateSlider);
-            updateSlider();
-        }
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Lumen<em>.</em></div>
+        <p class="foot-desc">A Brooklyn-based residential interior design studio, working with light, material, and proportion.</p>
+      </div>
+      <div><h4>Studio</h4><ul>
+        <li><a href="#studio">About</a></li><li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+      </ul></div>
+      <div><h4>Elsewhere</h4><ul>
+        <li><a href="#" onclick="return false">Instagram</a></li>
+        <li><a href="#" onclick="return false">Pinterest</a></li>
+        <li><a href="mailto:olivia@lumeninteriors.example">Email</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Lumen Interior Studio · Demo project</span>
+      <span>Brooklyn, New York</span>
+    </div>
+  </div>
+</footer>
 
-        // Instant Calculator Logic
-        let selectedMultiplier = 1;
-        const vehTypeBtns = document.querySelectorAll('.veh-type-btn');
-        const calcCheckboxes = document.querySelectorAll('.calc-checkbox');
-        const calcTotalDisplay = document.getElementById('calcTotalDisplay');
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="Close">×</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lightbox-cap" id="lbCap"></div>
+</div>
 
-        vehTypeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                vehTypeBtns.forEach(b => {
-                    b.classList.remove('active', 'border-gold', 'text-gold');
-                    b.classList.add('border-slate-800', 'text-slate-400');
-                });
-                btn.classList.add('active', 'border-gold', 'text-gold');
-                btn.classList.remove('border-slate-800', 'text-slate-400');
-                selectedMultiplier = parseFloat(btn.getAttribute('data-multiplier'));
-                calculateTotal();
-            });
-        });
+<script>
+// header scroll
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',window.scrollY>40)});
 
-        calcCheckboxes.forEach(cb => {
-            cb.addEventListener('change', calculateTotal);
-        });
+// mobile menu
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu'),mc=document.getElementById('mobileClose');
+burger.addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden'});
+mc.addEventListener('click',closeMenu);
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+function closeMenu(){mm.classList.remove('open');document.body.style.overflow=''}
 
-        function calculateTotal() {
-            let baseSum = 0;
-            calcCheckboxes.forEach(cb => {
-                if (cb.checked) {
-                    baseSum += parseInt(cb.value);
-                }
-            });
-            const total = Math.round(baseSum * selectedMultiplier);
-            calcTotalDisplay.textContent = `$${total.toLocaleString('en-US')}`;
-        }
+// lightbox
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+document.querySelectorAll('.project').forEach(p=>{
+  p.addEventListener('click',()=>{
+    lbImg.src=p.dataset.img;lbImg.alt=p.querySelector('img').alt;lbCap.textContent=p.dataset.cap;
+    lb.classList.add('open');document.body.style.overflow='hidden';
+  });
+});
+document.getElementById('lbClose').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
 
-        function applyCalculatedBooking() {
-            const totalText = calcTotalDisplay.textContent;
-            openBookingModal(`Custom Package Estimate (${totalText})`);
-        }
-
-        // Modal Controls
-        const bookingModal = document.getElementById('bookingModal');
-        const modalServiceInput = document.getElementById('modalServiceInput');
-
-        function openBookingModal(serviceName = '') {
-            if (serviceName) {
-                modalServiceInput.value = serviceName;
-            } else {
-                modalServiceInput.value = '';
-            }
-            bookingModal.classList.remove('hidden');
-        }
-
-        function closeBookingModal() {
-            bookingModal.classList.add('hidden');
-        }
-
-        // Handle Form Submission
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            closeBookingModal();
-            
-            const toast = document.getElementById('toastNotification');
-            toast.classList.remove('hidden');
-            
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 4000);
-        }
-    </script>
+// form
+const form=document.getElementById('lumenForm');
+form.addEventListener('submit',e=>{
+  e.preventDefault();let ok=true;
+  form.querySelectorAll('[required]').forEach(f=>{
+    const wrap=f.closest('.field');let valid=f.value.trim().length>0;
+    if(f.type==='email')valid=valid&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value);
+    wrap.classList.toggle('invalid',!valid);if(!valid)ok=false;
+  });
+  if(ok){
+    document.getElementById('lumenSuccess').classList.add('show');
+    form.querySelectorAll('input,select,textarea').forEach(el=>el.value='');
+    setTimeout(()=>document.getElementById('lumenSuccess').classList.remove('show'),6000);
+  }
+});
+</script>
 </body>
 </html>
